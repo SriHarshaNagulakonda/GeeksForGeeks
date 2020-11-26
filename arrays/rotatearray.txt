@@ -1,0 +1,12 @@
+def reverse(A,x,y):
+    l=y-1
+    count=0
+    for i in range(x,(x+y)//2):
+        A[i],A[l-count]=A[l-count],A[i]
+        count+=1
+
+def rotateArr(A,D,N):
+    reverse(A,0,D)
+    reverse(A,D,len(A))
+    reverse(A,0,len(A))
+    

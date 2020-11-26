@@ -1,0 +1,14 @@
+def floorSqrt(x): 
+    #Your code here
+    low=1
+    high=x
+    mid=(low+high)//2
+    while low<=high:
+        if (mid**2<x and (mid+1)**2>x) or mid**2==x:
+            return mid
+        elif mid**2>x:
+            high=mid
+        else:
+            low=mid
+        mid=(low+high)//2
+    return -1

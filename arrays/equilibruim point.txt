@@ -1,0 +1,17 @@
+def equilibriumPoint(a, N):
+    # Your code her
+    total=sum(a)
+    pre=a[0]
+    if N==1:
+        return 1
+    if N==2:
+        return -1
+    post=total-a[0]-a[1]
+    if a[0]==sum(a[2:]):
+        return 2
+    for i in range(2,N):
+        pre+=a[i-1]
+        post-=a[i]
+        if pre==post:
+            return i+1
+    return -1

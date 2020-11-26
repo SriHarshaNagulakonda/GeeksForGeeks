@@ -1,0 +1,12 @@
+def sumMatrix(a,b):
+    # code here
+    if len(a)!=len(b) or len(a[0])!=len(b[0]):
+        return []
+    try:
+        c=[[0]*len(a[0]) for i in range(len(a))]
+        for i in range(len(a)):
+            for j in range(len(a[i])):
+                c[i][j]=a[i][j]+b[i][j]
+        return c
+    except:
+        return []

@@ -1,0 +1,14 @@
+def deleteAtPosition(head,pos):
+    #code here
+    cur=head
+    if(pos==1):
+        head.data,head.next.data=head.next.data,head.data
+        head.next=head.next.next
+        return cur
+
+    pos=pos-1
+    while pos!=1:
+        head=head.next
+        pos-=1
+    head.next=head.next.next
+    return cur

@@ -1,0 +1,14 @@
+def exactly3Divisors(N):
+    count=1
+    if N<=3:
+        return 0
+    for i in range(5,N+1,2):
+        #factors=0
+        if ceil(i**0.5)==floor(i**0.5):
+            for j in range(ceil(i**0.5)-2,2,-2):
+                if i%j==0:
+                    break
+            else:
+                count+=1
+            #print(i,end=' ')
+    return count

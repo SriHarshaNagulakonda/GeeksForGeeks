@@ -1,0 +1,11 @@
+from collections import Counter
+#Complete this function
+def majorityWins(arr, n,  x,y):
+    # code here
+    d=Counter(arr)
+    if d[x]>d[y]:
+        return x
+    elif d[x]<d[y]:
+        return y
+    else:
+        return min(x,y)

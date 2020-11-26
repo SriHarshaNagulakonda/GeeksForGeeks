@@ -1,0 +1,11 @@
+def getFirstSetBit(x):
+    if x==0:
+        return 0
+    count=1
+    while x!=0:
+        if x&1==1:
+            return count
+        else:
+            count+=1
+        x>>=1
+    return count

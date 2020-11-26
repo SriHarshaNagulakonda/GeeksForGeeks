@@ -1,0 +1,5 @@
+def deleteNode(cur):
+    #code here
+    cur.data,cur.next.data=cur.next.data,cur.data
+    cur.next=cur.next.next
+  

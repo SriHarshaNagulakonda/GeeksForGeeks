@@ -1,0 +1,5 @@
+def checkKthBit(n,k):
+    #Your code here
+    if n & 2**k == 0:
+        return False
+    return True

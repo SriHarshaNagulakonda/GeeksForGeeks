@@ -1,0 +1,7 @@
+def pairWiseSwap(head):
+    # code here
+    cur=head
+    while head!=None and head.next!=None:
+        head.data,head.next.data=head.next.data,head.data
+        head=head.next.next
+    return cur

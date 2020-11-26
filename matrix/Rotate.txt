@@ -1,0 +1,11 @@
+def transpose(a, n):
+    # code here 
+    for i in range(n):
+        for j in range(i+1,n):
+            a[i][j],a[j][i]=a[j][i],a[i][j]
+
+def rotateby90(a, n): 
+    # code here
+    transpose(a,n)
+    for i in range(n//2):
+        a[i],a[-(i+1)]=a[-(i+1)],a[i]

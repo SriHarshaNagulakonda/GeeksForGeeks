@@ -1,0 +1,30 @@
+def mergeArrays(a,b,n,m):
+    '''
+    :param a: given sorted array a
+    :param n: size of sorted array a
+    :param b: given sorted array b
+    :param m: size of sorted array b
+    :return:  The union of both arrays as a list
+    '''
+    # code here 
+    l=[-1]
+    
+    while len(a)!=0 and len(b)!=0:
+        #print(a,b)
+        if a[0]==b[0]:
+            a.pop(0)
+        if a[0]<b[0]:
+            if a[0]==l[-1]:
+                a.pop(0)
+            else:
+                l+=[a.pop(0)]
+        else:
+            if b[0]==l[-1]:
+                b.pop(0)
+            else:
+                l+=[b.pop(0)]
+    if len(a)!=0:
+        l.extend(list(set(a)))
+    elif len(b)!=0:
+        l.extend(list(set(b)))
+    return l[1:]

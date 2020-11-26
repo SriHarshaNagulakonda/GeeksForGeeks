@@ -1,0 +1,48 @@
+def sortedInsert(head, data):
+    '''
+    head:  head of given sorted circular linked list
+    data:  data to be inserted
+    
+    return: head of resultant circular linked list
+    '''
+    cur=head
+    node=Node(data)
+    if head==None:
+        return node
+    if head.data>=data:
+        temp=head
+        while temp.next!=head:
+            temp=temp.next
+        node.next=head
+        temp.next=node
+        return node
+    while head.next.data<=data:
+        head=head.next
+    node.next=head.next
+    head.next=node
+    return cur
+    
+
+#Optimized code
+def sortedInsert(head, data):
+    '''
+    head:  head of given sorted circular linked list
+    data:  data to be inserted
+    
+    return: head of resultant circular linked list
+    '''
+    cur=head
+    node=Node(data)
+    if head==None:
+        return node
+    if head.data>=data:
+        temp=head
+        head.data,node.data=node.data,head.data
+        node.next=head.next
+        head.next=node
+        return head
+    while head.next.data<=data:
+        head=head.next
+    node.next=head.next
+    head.next=node
+    return cur

@@ -1,0 +1,50 @@
+def addLists(first, second):
+    # code here
+    # return head of sum list
+    a=-1
+    b=-1
+    temp=first
+    while temp:
+        temp=temp.next
+        a+=1
+    temp=second
+    while temp:
+        temp=temp.next
+        b+=1
+    sum=0
+    while first:
+        sum+=(10**a)*first.data
+        first=first.next
+        a-=1
+    sum2=0
+    while second:
+        sum+=(10**b)*second.data
+        second=second.next
+        b-=1
+    # print(sum)
+    
+    
+    
+    
+    
+    
+def addLists1(first, second):
+    # code here
+    # return head of sum list
+    a=""
+    b=""
+    temp=first
+    
+    while temp:
+        a+=str(temp.data)
+        temp=temp.next
+    temp=second
+    while temp:
+        b+=str(temp.data)
+        temp=temp.next
+    # print(sum)
+    sum=int(a)+int(b)
+    ll=LinkedList()
+    for i in str(sum):
+        ll.insert(int(i))
+    return ll.head

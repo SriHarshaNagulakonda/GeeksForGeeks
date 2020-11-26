@@ -1,0 +1,14 @@
+def CountBits(n):
+    n+=1
+    count=n//2
+    p=2
+    while p<=n:
+        pairs=n//p
+        
+        count+=(pairs//2)*p
+        
+        if pairs&1:
+            count+=n%p
+        
+        p<<=1
+    return count

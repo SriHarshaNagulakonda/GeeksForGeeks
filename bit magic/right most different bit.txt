@@ -1,0 +1,11 @@
+def posOfRightMostDiffBit(m,n):
+    #Your code here
+    count=1
+    while m!=0 or n!=0:
+        if m&1!=n&1:
+            return count
+        else:
+            count+=1
+        m>>=1
+        n>>=1
+    return -1

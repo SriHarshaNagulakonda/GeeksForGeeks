@@ -1,0 +1,13 @@
+def reverseInGroups(A,N,K):
+    #Your code here
+    i=K-1
+    b=[]
+    if K>N:
+        return A[::-1]
+    while i<len(A):
+        for j in range(i,i-K,-1):
+            b.append(A[j])
+            #print(A[j],end=' ')
+        i+=K
+    b+=A[:i-K:-1]
+    return b

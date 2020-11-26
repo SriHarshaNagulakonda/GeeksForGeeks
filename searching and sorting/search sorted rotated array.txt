@@ -1,0 +1,46 @@
+def getPeak(a,n):
+    if a[0]>a[1]:
+        return 0
+    if a[-1]>a[0]:
+        return n-1
+    low=0
+    high=n-1
+    mid=(low+high)//2
+    while(True):
+            
+        if a[mid]>a[mid-1] and a[mid]>a[mid+1]:
+            return mid
+        if a[mid]<a[low]:
+            high=mid-1
+        else:
+            low=mid+1
+        mid=(low+high)//2
+
+
+def bin_search(arr, left, high, key):
+    mid=(left+high)//2
+    if left>high:
+        return -1
+    
+    if arr[mid]==key:
+        return mid
+    if arr[mid]>key:
+        return bin_search(arr,left,mid-1,key)
+    if arr[mid]<key:
+        return bin_search(arr,mid+1,high,key)
+
+def Search(arr,n,k):
+    #code here
+    if n==1:
+        if a[0]==k:
+            return 0
+        else:
+            return -1
+    i=getPeak(arr,n)
+    if arr[i]==k:
+        return i
+    if arr[0]==k:
+        return 0
+    if arr[i]<k:
+        return bin_search(arr,0,i,k)
+    return bin_search(arr,i+1,n-1,k)

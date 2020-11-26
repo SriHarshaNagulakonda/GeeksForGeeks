@@ -1,0 +1,8 @@
+def leaders(a,N):
+    m=a[-1]
+    l=[m]
+    for i in range(N-2,-1,-1):
+        if a[i]>=m:
+            l.append(a[i])
+            m=a[i]
+    return l[::-1]
